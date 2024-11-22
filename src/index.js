@@ -9,7 +9,7 @@ app.use(express.urlencoded({ extended: true }));
 dotenv.config();
 //Kết nối database
 try {
-    await sequelize.sync({force: true}); 
+    await sequelize.sync({force: false}); //để true khi reset sẽ bị xóa dữ liệu ở bảng 
     console.log("Đồng bộ thành công");
 } catch (error) {
     confirm.log(error.message);
