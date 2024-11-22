@@ -79,7 +79,9 @@ class UserController {
             };
             const rs = await sendmail(data);
             return res.status(200).json({
-                rs, resetToken
+                message:"mail đã được gửi", 
+                link: `${process.env.URL_SERVER}/login/resetpass/${resetToken}`,
+                resetToken
             })
         }
     }
